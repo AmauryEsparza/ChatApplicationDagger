@@ -1,4 +1,4 @@
-package ViewControllers;
+package com.example.chatapplicationdagger.ViewControllers;
 
 import android.app.ListActivity;
 import android.os.Bundle;

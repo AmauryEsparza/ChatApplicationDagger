@@ -1,6 +1,6 @@
-package BussinessControllers;
+package com.example.chatapplicationdagger.BussinessControllers;
 
-import InformationHandlers.ClientChatInformationHandler;
+import com.example.chatapplicationdagger.InformationHandlers.ClientChatInformationHandler;
 
 /**
  * Created by Amaury Esparza on 02/10/2014.

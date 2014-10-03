@@ -1,4 +1,6 @@
-import ViewControllers.ChatActivityModule;
+package com.example.chatapplicationdagger;
+
+import com.example.chatapplicationdagger.ViewControllers.ChatActivityModule;
 import dagger.Module;
 
 /**

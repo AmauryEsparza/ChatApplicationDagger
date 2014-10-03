@@ -1,9 +1,7 @@
-package ViewControllers;
+package com.example.chatapplicationdagger.ViewControllers;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.example.chatapplicationdagger.R;
 

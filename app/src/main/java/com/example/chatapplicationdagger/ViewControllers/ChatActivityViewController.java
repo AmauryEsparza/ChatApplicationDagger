@@ -1,11 +1,12 @@
-package ViewControllers;
+package com.example.chatapplicationdagger.ViewControllers;
 
 import android.app.Activity;
-import android.app.Application;
 import android.os.Bundle;
+
+import com.example.chatapplicationdagger.App;
 import com.example.chatapplicationdagger.R;
 import javax.inject.Inject;
-import BussinessControllers.IChatRepresentationDelegate;
+import com.example.chatapplicationdagger.BussinessControllers.IChatRepresentationDelegate;
 
 import dagger.ObjectGraph;
 
@@ -23,6 +24,9 @@ public class ChatActivityViewController extends Activity{
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_activity);
+        objectGraph = ((App) getApplication()).getObjectGraph();
+        objectGraph.inject(this);
+        chatBussiness.sendMessage("It works");
 
 
     }

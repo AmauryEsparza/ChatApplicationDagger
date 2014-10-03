@@ -1,7 +1,7 @@
-package ViewControllers;
+package com.example.chatapplicationdagger.ViewControllers;
 
-import BussinessControllers.FriendChatBussinessController;
-import BussinessControllers.IChatRepresentationDelegate;
+import com.example.chatapplicationdagger.BussinessControllers.FriendChatBussinessController;
+import com.example.chatapplicationdagger.BussinessControllers.IChatRepresentationDelegate;
 import dagger.Module;
 import dagger.Provides;
 
