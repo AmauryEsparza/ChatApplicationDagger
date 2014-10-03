@@ -1,12 +1,14 @@
-package ViewControllers;
+package com.example.chatapplicationdagger.ViewControllers;
 
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.example.chatapplicationdagger.App;
 import com.example.chatapplicationdagger.R;
+import javax.inject.Inject;
+import com.example.chatapplicationdagger.BussinessControllers.IChatRepresentationDelegate;
 
-import BussinessControllers.FriendChatBussinessController;
-import BussinessControllers.IChatRepresentationDelegate;
+import dagger.ObjectGraph;
 
 /**
  * Created by Amaury Esparza on 02/10/2014.
@@ -16,13 +18,17 @@ import BussinessControllers.IChatRepresentationDelegate;
 public class ChatActivityViewController extends Activity{
 
     //this fields is gonna be injected
-    IChatRepresentationDelegate chatBussiness;
+    ObjectGraph objectGraph;
+    @Inject IChatRepresentationDelegate chatBussiness;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_activity);
-        chatBussiness = new FriendChatBussinessController();
-        chatBussiness.sendMessage("Hola");
+        objectGraph = ((App) getApplication()).getObjectGraph();
+        objectGraph.inject(this);
+        chatBussiness.sendMessage("It works");
+
+
     }
 
 
