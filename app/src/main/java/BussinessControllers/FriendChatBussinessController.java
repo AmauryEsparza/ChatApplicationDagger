@@ -1,5 +1,7 @@
 package BussinessControllers;
 
+import javax.inject.Inject;
+
 /**
  * Created by Amaury Esparza on 02/10/2014.
  */
