@@ -2,8 +2,10 @@ package com.example.chatapplicationdagger.ViewControllers;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.chatapplicationdagger.App;
+import com.example.chatapplicationdagger.BussinessControllers.FriendChatBussinessController;
 import com.example.chatapplicationdagger.R;
 import javax.inject.Inject;
 import com.example.chatapplicationdagger.BussinessControllers.IChatRepresentationDelegate;
@@ -18,19 +20,17 @@ import dagger.ObjectGraph;
 public class ChatActivityViewController extends Activity{
 
     //this fields is gonna be injected
-    ObjectGraph objectGraph;
+    ObjectGraph activityGraph;
     @Inject IChatRepresentationDelegate chatBussiness;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
+        Log.d("ChatActivityViewController", "onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_activity);
-        objectGraph = ((App) getApplication()).getObjectGraph();
-        objectGraph.inject(this);
+        activityGraph = ((App) getApplication()).getObjectGraph();
+        activityGraph.inject(this);
+        Log.d("ChatActivityViewController", "Before sendMessage");
         chatBussiness.sendMessage("It works");
-
-
     }
-
-
-
 }
