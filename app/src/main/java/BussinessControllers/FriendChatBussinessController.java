@@ -5,6 +5,8 @@ package BussinessControllers;
  */
 public class FriendChatBussinessController implements IChatRepresentationDelegate{
 
+    ParseRequestBussinessController request;
+
     @Override
     public void sendMessage(String message){
         
