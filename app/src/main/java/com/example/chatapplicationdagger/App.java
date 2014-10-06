@@ -20,7 +20,8 @@ public class App extends Application{
     public void onCreate(){
         super.onCreate();
         Log.d("App", "onCreate");
-        objectGraph.create(getModules().toArray());
+        objectGraph = ObjectGraph.create(getModules().toArray());
+
     }
 
     public ObjectGraph getObjectGraph(){
@@ -28,6 +29,6 @@ public class App extends Application{
     }
 
     private List<Object> getModules(){
-        return Arrays.<Object> asList(new AppModule(), new ChatActivityModule());
+        return Arrays.<Object> asList(new AppModule());
     }
 }

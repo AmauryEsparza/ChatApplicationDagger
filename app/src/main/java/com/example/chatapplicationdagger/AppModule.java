@@ -1,7 +1,12 @@
 package com.example.chatapplicationdagger;
 
+import android.app.Application;
+
+import com.example.chatapplicationdagger.BussinessControllers.FriendChatBussinessController;
 import com.example.chatapplicationdagger.ViewControllers.ChatActivityModule;
 import com.example.chatapplicationdagger.ViewControllers.ChatActivityViewController;
+
+import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
@@ -11,10 +16,7 @@ import dagger.Provides;
  */
 
 @Module(
-        injects = {
-                ChatActivityViewController.class
-        },
-        complete = false
+        injects = App.class
 )
 public class AppModule {
 

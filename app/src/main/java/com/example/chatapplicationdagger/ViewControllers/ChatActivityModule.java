@@ -11,7 +11,7 @@ import dagger.Provides;
  * Created by Amaury Esparza on 02/10/2014.
  */
 @Module(
-        library = true
+        injects = ChatActivityViewController.class
 )
 public class ChatActivityModule {
 
