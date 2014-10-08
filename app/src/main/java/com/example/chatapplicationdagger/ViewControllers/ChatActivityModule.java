@@ -4,6 +4,9 @@ import android.util.Log;
 
 import com.example.chatapplicationdagger.BussinessControllers.FriendChatBussinessController;
 import com.example.chatapplicationdagger.BussinessControllers.IChatRepresentationDelegate;
+
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -11,11 +14,13 @@ import dagger.Provides;
  * Created by Amaury Esparza on 02/10/2014.
  */
 @Module(
-        injects = ChatActivityViewController.class
+        injects = ChatActivityViewController.class,
+        complete = false
 )
 public class ChatActivityModule {
 
-    @Provides public IChatRepresentationDelegate provideFriendChat(){
+    @Provides @Singleton
+    IChatRepresentationDelegate provideFriendChat(){
         return new FriendChatBussinessController();
     }
 }

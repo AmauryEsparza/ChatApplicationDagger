@@ -1,8 +1,8 @@
 package com.example.chatapplicationdagger.BussinessControllers;
 
 /**
- * Created by Amaury Esparza on 02/10/2014.
+ * Created by Amaury Esparza on 06/10/2014.
  */
-public interface ILoginRepresentationHandler {
+public interface ILoginRepresentationDelegate  {
     public void login(String username);
 }

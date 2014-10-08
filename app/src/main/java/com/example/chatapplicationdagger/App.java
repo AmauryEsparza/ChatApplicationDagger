@@ -21,7 +21,6 @@ public class App extends Application{
         super.onCreate();
         Log.d("App", "onCreate");
         objectGraph = ObjectGraph.create(getModules().toArray());
-
     }
 
     public ObjectGraph getObjectGraph(){
