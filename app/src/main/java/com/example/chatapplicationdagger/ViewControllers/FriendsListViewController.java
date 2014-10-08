@@ -1,6 +1,7 @@
 package com.example.chatapplicationdagger.ViewControllers;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -26,7 +27,7 @@ public class FriendsListViewController extends ListActivity {
 
     //This object it's gonna be injected
     @Inject IListFriendsRepresentationDelegate friendsRepresentationDelegate;
-    String [] names;
+    private String [] names;
     private ObjectGraph graphFriendsList;
 
     @Override
@@ -35,19 +36,16 @@ public class FriendsListViewController extends ListActivity {
         //Injecting Dependencies
         graphFriendsList = ((App) getApplication()).getObjectGraph().plus(new FriendsListModule());
         graphFriendsList.inject(this);
-        //Get the names of the connected users
-        names = friendsRepresentationDelegate.listConnectedFriends();
-
         //Create the adapter and add the friends to the ListView
-        ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, names);
+        ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, friendsRepresentationDelegate.listConnectedFriends());
         setListAdapter(listAdapter);
     }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
         super.onListItemClick(l, v, position, id);
-        Toast.makeText(this, "What's up", Toast.LENGTH_SHORT).show();
-
+        Intent intentChat = new Intent(getApplicationContext(), ChatActivityViewController.class);
+        startActivity(intentChat);
     }
 
 }

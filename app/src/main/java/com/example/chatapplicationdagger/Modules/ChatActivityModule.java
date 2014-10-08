@@ -1,9 +1,10 @@
-package com.example.chatapplicationdagger.ViewControllers;
+package com.example.chatapplicationdagger.Modules;
 
 import android.util.Log;
 
 import com.example.chatapplicationdagger.BussinessControllers.FriendChatBussinessController;
 import com.example.chatapplicationdagger.BussinessControllers.IChatRepresentationDelegate;
+import com.example.chatapplicationdagger.ViewControllers.ChatActivityViewController;
 
 import javax.inject.Singleton;
 

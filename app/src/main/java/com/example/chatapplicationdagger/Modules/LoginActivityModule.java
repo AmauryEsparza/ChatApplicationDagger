@@ -1,7 +1,8 @@
-package com.example.chatapplicationdagger.ViewControllers;
+package com.example.chatapplicationdagger.Modules;
 
 import com.example.chatapplicationdagger.BussinessControllers.ILoginRepresentationDelegate;
 import com.example.chatapplicationdagger.BussinessControllers.LoginBussinessController;
+import com.example.chatapplicationdagger.ViewControllers.LoginActivityViewController;
 
 import javax.inject.Singleton;
 

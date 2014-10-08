@@ -1,11 +1,15 @@
 package com.example.chatapplicationdagger.ViewControllers;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.example.chatapplicationdagger.App;
-import com.example.chatapplicationdagger.BussinessControllers.FriendChatBussinessController;
+import com.example.chatapplicationdagger.Modules.ChatActivityModule;
 import com.example.chatapplicationdagger.R;
 import javax.inject.Inject;
 import com.example.chatapplicationdagger.BussinessControllers.IChatRepresentationDelegate;
@@ -17,10 +21,11 @@ import dagger.ObjectGraph;
  */
 
 //Contains the reference to chat_activity.xml relation with FriendsChatBusinessController to send the messages
-public class ChatActivityViewController extends Activity{
+public class ChatActivityViewController extends ListActivity {
 
-    //This fields is gonna be injected
-    ObjectGraph activityGraph;
+    private ObjectGraph activityGraph;
+    private ImageButton buttonSend;
+    private EditText editMessage;
     @Inject IChatRepresentationDelegate chatBusiness;
 
     @Override
@@ -29,5 +34,22 @@ public class ChatActivityViewController extends Activity{
         setContentView(R.layout.chat_activity);
         activityGraph = ((App) getApplication()).getObjectGraph().plus(new ChatActivityModule());
         activityGraph.inject(this);
+        ArrayAdapter<String> adapterMessages = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, chatBusiness.getPreviousMessages());
+        setListAdapter(adapterMessages);
+        chatBusiness.getPreviousMessages();
+
+        buttonSend = (ImageButton) findViewById(R.id.button_message_send);
+        editMessage = (EditText) findViewById(R.id.edit_new_message);
+        buttonSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chatBusiness.sendMessage(editMessage.getText().toString());
+            }
+        });
+
     }
+
+
+
+
 }

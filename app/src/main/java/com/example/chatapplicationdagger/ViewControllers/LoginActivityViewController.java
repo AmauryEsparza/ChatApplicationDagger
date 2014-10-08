@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import com.example.chatapplicationdagger.App;
 import com.example.chatapplicationdagger.BussinessControllers.ILoginRepresentationDelegate;
+import com.example.chatapplicationdagger.Modules.LoginActivityModule;
 import com.example.chatapplicationdagger.R;
 import javax.inject.Inject;
 import dagger.ObjectGraph;
@@ -16,9 +17,9 @@ public class LoginActivityViewController extends Activity {
 
     //Call to login on LoginBusinessController
     @Inject ILoginRepresentationDelegate loginRepresentationDelegate;
-    ObjectGraph loginGraph;
-    Button buttonLogin;
-    EditText editTextUser;
+    private ObjectGraph loginGraph;
+    private Button buttonLogin;
+    private EditText editTextUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

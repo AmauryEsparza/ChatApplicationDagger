@@ -5,4 +5,5 @@ package com.example.chatapplicationdagger.BussinessControllers;
  */
 public interface IChatRepresentationDelegate {
     public void sendMessage(String message);
+    public String [] getPreviousMessages();
 }
