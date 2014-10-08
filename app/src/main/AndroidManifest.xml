@@ -4,11 +4,12 @@
 
     <application
         android:allowBackup="true"
+        android:name=".App"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name="ViewControllers.LoginActivityViewController"
+            android:name=".ViewControllers.LoginActivityViewController"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ViewControllers.ChatActivityViewController">
+        </activity>
+        <activity
+            android:name=".ViewControllers.FriendsListViewController">
+        </activity>
     </application>
-
 </manifest>
