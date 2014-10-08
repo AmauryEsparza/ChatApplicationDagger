@@ -19,8 +19,9 @@
         </activity>
         <activity
             android:name=".ViewControllers.ChatActivityViewController">
-
+        </activity>
+        <activity
+            android:name=".ViewControllers.FriendsListViewController">
         </activity>
     </application>
-
 </manifest>

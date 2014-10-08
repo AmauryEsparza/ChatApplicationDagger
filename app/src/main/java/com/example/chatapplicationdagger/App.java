@@ -3,8 +3,6 @@ package com.example.chatapplicationdagger;
 import android.app.Application;
 import android.util.Log;
 
-import com.example.chatapplicationdagger.ViewControllers.ChatActivityModule;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,7 +19,6 @@ public class App extends Application{
         super.onCreate();
         Log.d("App", "onCreate");
         objectGraph = ObjectGraph.create(getModules().toArray());
-
     }
 
     public ObjectGraph getObjectGraph(){
