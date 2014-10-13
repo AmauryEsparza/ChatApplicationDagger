@@ -42,4 +42,10 @@ public class LoginActivityViewController extends Activity {
             }
         });
     }
+
+    @Override
+    protected void onDestroy(){
+        loginGraph = null;
+        super.onDestroy();
+    }
 }

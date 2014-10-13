@@ -48,4 +48,10 @@ public class FriendsListViewController extends ListActivity {
         startActivity(intentChat);
     }
 
+    @Override
+    protected void onDestroy(){
+        graphFriendsList = null;
+        super.onDestroy();
+    }
+
 }
