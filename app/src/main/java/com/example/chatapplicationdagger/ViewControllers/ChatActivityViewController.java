@@ -46,7 +46,12 @@ public class ChatActivityViewController extends ListActivity {
                 chatBusiness.sendMessage(editMessage.getText().toString());
             }
         });
+    }
 
+    @Override
+    protected void onDestroy(){
+        activityGraph = null;
+        super.onDestroy();
     }
 
 
