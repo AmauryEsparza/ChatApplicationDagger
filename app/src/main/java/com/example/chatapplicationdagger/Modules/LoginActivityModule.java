@@ -1,5 +1,6 @@
 package com.example.chatapplicationdagger.Modules;
 
+import com.example.chatapplicationdagger.App;
 import com.example.chatapplicationdagger.BussinessControllers.ILoginRepresentationDelegate;
 import com.example.chatapplicationdagger.BussinessControllers.LoginBussinessController;
 import com.example.chatapplicationdagger.ViewControllers.LoginActivityViewController;
@@ -17,9 +18,13 @@ import dagger.Provides;
 )
 public class LoginActivityModule {
 
+    App app;
+    public LoginActivityModule(App app){
+        this.app = app;
+    }
     @Provides @Singleton
     ILoginRepresentationDelegate provideLoginRepresentationDelegate(){
-        return new LoginBussinessController();
+        return new LoginBussinessController(app);
     }
 
 
