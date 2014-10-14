@@ -34,7 +34,7 @@ public class FriendsListViewController extends ListActivity {
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         //Injecting Dependencies
-        graphFriendsList = ((App) getApplication()).getObjectGraph().plus(new FriendsListModule());
+        graphFriendsList = ((App) getApplication()).getObjectGraph().plus(new FriendsListModule((App)getApplication()));
         graphFriendsList.inject(this);
         //Create the adapter and add the friends to the ListView
         ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, friendsRepresentationDelegate.listConnectedFriends());

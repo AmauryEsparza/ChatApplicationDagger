@@ -1,5 +1,8 @@
 package com.example.chatapplicationdagger.Modules;
 
+import android.app.Application;
+
+import com.example.chatapplicationdagger.App;
 import com.example.chatapplicationdagger.BussinessControllers.IListFriendsRepresentationDelegate;
 import com.example.chatapplicationdagger.BussinessControllers.ListFriendsBussinessController;
 import com.example.chatapplicationdagger.ViewControllers.FriendsListViewController;
@@ -17,7 +20,11 @@ import dagger.Provides;
 )
 public class FriendsListModule {
 
+    private App application;
+    public FriendsListModule(App application){
+        this.application = application;
+    }
     @Provides @Singleton IListFriendsRepresentationDelegate providesListFriendsRepresentationDelegateProvides(){
-        return new ListFriendsBussinessController();
+        return new ListFriendsBussinessController(application);
     }
 }
