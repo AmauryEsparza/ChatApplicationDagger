@@ -1,6 +1,7 @@
 package com.example.chatapplicationdagger.ViewControllers;
 
 import android.app.ListActivity;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;

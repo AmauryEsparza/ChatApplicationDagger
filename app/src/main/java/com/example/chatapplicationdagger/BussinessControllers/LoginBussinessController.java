@@ -26,9 +26,10 @@ public class LoginBussinessController implements ILoginRepresentationDelegate {
     }
 
     @Override
-    public void login(String username, String ip, int port){
+    public void login(String username, String ip, int port, String status){
         try {
-            requestHandler.updateUser(username, ip, port);
+            //requestHandler.updateUser(username, ip, port, status);
+            requestHandler.getConnectedUsers();
         } catch (JSONException e) {
             e.printStackTrace();
         }

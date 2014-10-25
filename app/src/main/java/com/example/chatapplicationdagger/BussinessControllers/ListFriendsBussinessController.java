@@ -31,7 +31,6 @@ public class ListFriendsBussinessController implements IListFriendsRepresentatio
         return names;*/
         String[] names = {""};
         try {
-            requestHandler.imprimir();
             names = requestHandler.getConnectedUsers();
         } catch (JSONException e) {
             e.printStackTrace();

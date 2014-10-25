@@ -56,7 +56,7 @@ public class LoginActivityViewController extends Activity {
                     ip = "192.168.1.79";
                     if(ip != null) {
                         Log.d("LoginActivity", ip + "");
-                        loginRepresentationDelegate.login(editTextUser.getText().toString(), ip, 13375);
+                        loginRepresentationDelegate.login(editTextUser.getText().toString(), ip, 13375, "online");
                         Intent intent = new Intent(getApplicationContext(), FriendsListViewController.class);
                         startActivity(intent);
                     }
@@ -74,6 +74,8 @@ public class LoginActivityViewController extends Activity {
 
     @Override
     protected void onDestroy(){
+        Log.d("LoginActivityViewController", "onDestroy()");
+        //Status change to offline
         loginGraph = null;
         super.onDestroy();
     }
