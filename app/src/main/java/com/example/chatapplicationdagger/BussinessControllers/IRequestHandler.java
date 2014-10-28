@@ -10,4 +10,7 @@ import org.json.JSONException;
 public interface IRequestHandler {
     public String[] getConnectedUsers() throws JSONException;
     public void updateUser(String username, String ip, int port, String status)throws JSONException;
+    public void sendMessage(int index, String message) throws JSONException;
+    public void listMessages(int publicId) throws JSONException;
+
 }

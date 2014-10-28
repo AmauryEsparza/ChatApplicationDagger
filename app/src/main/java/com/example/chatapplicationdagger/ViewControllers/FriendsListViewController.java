@@ -3,6 +3,7 @@ package com.example.chatapplicationdagger.ViewControllers;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -51,6 +52,8 @@ public class FriendsListViewController extends ListActivity {
     public void onListItemClick(ListView l, View v, int position, long id){
         super.onListItemClick(l, v, position, id);
         Intent intentChat = new Intent(getApplicationContext(), ChatActivityViewController.class);
+        Log.d("FiendListViewController$onListItemClick", position+"");
+        intentChat.putExtra("INDEX", position);
         startActivity(intentChat);
     }
 

@@ -61,11 +61,11 @@ public class LoginActivityViewController extends Activity {
                         startActivity(intent);
                     }
                     else{
-                        Toast.makeText(getApplicationContext(), "There's no internet connection, Try Again Later", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "There's not internet connection, Try Again Later", Toast.LENGTH_LONG).show();
                     }
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "There's no internet connection, Try Again Later", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "There's not internet connection, Try Again Later", Toast.LENGTH_LONG).show();
                 }
 
             }
