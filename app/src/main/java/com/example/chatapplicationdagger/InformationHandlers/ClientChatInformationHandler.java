@@ -20,7 +20,7 @@ import java.util.concurrent.ExecutionException;
 //This class send the request and receive the response from the server
 public class ClientChatInformationHandler extends AsyncTask<JSONObject, Void , Void> implements IClientChat{
     //Server IP address
-    private final String serverAddress = "192.168.1.79";
+    private final String serverAddress = "192.168.137.1";
     private final int serverPort = 13373;
     private String response;
 
@@ -52,6 +52,7 @@ public class ClientChatInformationHandler extends AsyncTask<JSONObject, Void , V
         try {
             execute(jsonObject);
             get();
+            cancel(true);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
