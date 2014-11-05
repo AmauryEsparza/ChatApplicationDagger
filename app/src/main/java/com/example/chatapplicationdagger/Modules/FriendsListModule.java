@@ -24,7 +24,7 @@ public class FriendsListModule {
     public FriendsListModule(App application){
         this.application = application;
     }
-    @Provides @Singleton IListFriendsRepresentationDelegate providesListFriendsRepresentationDelegateProvides(){
+    @Provides @Singleton IListFriendsRepresentationDelegate provideListFriendsRepresentationDelegate(){
         return new ListFriendsBussinessController(application);
     }
 }

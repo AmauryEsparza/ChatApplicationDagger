@@ -3,6 +3,7 @@ package com.example.chatapplicationdagger.ViewControllers;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -37,14 +38,22 @@ public class FriendsListViewController extends ListActivity {
         graphFriendsList = ((App) getApplication()).getObjectGraph().plus(new FriendsListModule((App)getApplication()));
         graphFriendsList.inject(this);
         //Create the adapter and add the friends to the ListView
-        ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, friendsRepresentationDelegate.listConnectedFriends());
-        setListAdapter(listAdapter);
+        names = friendsRepresentationDelegate.listConnectedFriends();
+        if(names != null) {
+            ArrayAdapter<String> listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_expandable_list_item_1, names);
+            setListAdapter(listAdapter);
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Error receiving data", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
         super.onListItemClick(l, v, position, id);
         Intent intentChat = new Intent(getApplicationContext(), ChatActivityViewController.class);
+        Log.d("FiendListViewController$onListItemClick", position+"");
+        intentChat.putExtra("INDEX", position);
         startActivity(intentChat);
     }
 

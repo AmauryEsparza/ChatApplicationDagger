@@ -27,17 +27,12 @@ public class ListFriendsBussinessController implements IListFriendsRepresentatio
     }
     @Override
     public String[] listConnectedFriends(){
-        /*String [] names = new String[] {"Amaury Esparza", "Luis Rangel", "Hugo Medina", "Cesar Ureno"};
-        return names;*/
         String[] names = {""};
         try {
-            requestHandler.imprimir();
             names = requestHandler.getConnectedUsers();
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        //Return parserRequest.getListFriends
         return names;
     }
-
 }

@@ -3,6 +3,7 @@ package com.example.chatapplicationdagger.Modules;
 import android.app.Application;
 
 import com.example.chatapplicationdagger.App;
+import com.example.chatapplicationdagger.BussinessControllers.FriendChatBussinessController;
 import com.example.chatapplicationdagger.BussinessControllers.IRequestHandler;
 import com.example.chatapplicationdagger.BussinessControllers.ListFriendsBussinessController;
 import com.example.chatapplicationdagger.BussinessControllers.LoginBussinessController;
@@ -19,7 +20,8 @@ import dagger.Provides;
 @Module(
         injects = {
                 ListFriendsBussinessController.class,
-                LoginBussinessController.class
+                LoginBussinessController.class,
+                FriendChatBussinessController.class
         }
 )
 public class ParseRequestModule {
